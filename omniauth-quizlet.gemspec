@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["mike.d.1984@gmail.com"]
   gem.description   = %q{quizlet omniauth strategy}
   gem.summary       = %q{quizlet omniauth strategy}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/29decibel/omniauth-quizlet"
 
 	gem.rubyforge_project = "omniauth-quizlet"
   gem.add_dependency 'omniauth', '~> 1.0.0.rc2'
