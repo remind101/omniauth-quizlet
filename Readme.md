@@ -1,5 +1,6 @@
 ### An omniauth strategy for [quizlet](www.quizlet.com)
-#### config/initializers/omniauth.rb
+
+config/initializers/omniauth.rb
 ``` ruby
 
 Rails.application.config.middleware.use OmniAuth::Builder do
@@ -8,7 +9,7 @@ end
 
 ```
 
-#### Rails3.1 Gemfile
+Rails3.1 Gemfile
 ``` ruby
 
 gem 'omniauth'
