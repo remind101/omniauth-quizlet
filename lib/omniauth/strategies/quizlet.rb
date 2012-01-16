@@ -14,7 +14,6 @@ module OmniAuth
 
       option :authorize_params, {
         :response_type => 'code',
-        :client_id => options.consumer_key,
         :scope => 'read',
         :state => 'some_random_string'
       }
@@ -27,7 +26,7 @@ module OmniAuth
 
       def raw_info
         access_token.options[:mode] = :header
-				encoded_auth = Base64.encode64("#{options.consumer_key}:#{options.consumer_secret}").strip
+				encoded_auth = Base64.encode64("#{options.client_id}:#{options.client_secret}").strip
         access_token.options[:header_format] = "Basic #{encoded_auth}"
         access_token.options[:param_name] = :code
         access_token.options[:headers] = {
@@ -41,7 +40,7 @@ module OmniAuth
               'code' => @request.params['code']
             }
           }
-          @raw_info ||= access_token.post('https://api.quizlet.com/oauth/token',ops).parsed
+          @raw_info ||= access_token.post(options.client_options['token_url'],ops).parsed
         rescue Exception => e
           Rails.logger.info e.inspect
         end
