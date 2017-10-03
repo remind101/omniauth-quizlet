@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/29decibel/omniauth-quizlet"
 
 	gem.rubyforge_project = "omniauth-quizlet"
-  gem.add_dependency 'omniauth', '~> 1.0.0.rc2'
-  gem.add_dependency 'omniauth-oauth2', '~> 1.0.0.rc2'
+  gem.add_dependency 'omniauth', '~> 1.0'
+  gem.add_dependency 'omniauth-oauth2', '~> 1.0'
 	
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
